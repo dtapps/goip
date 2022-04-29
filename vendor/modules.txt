@@ -1,0 +1,25 @@
+# github.com/dtapps/gostring v1.0.0
+## explicit
+github.com/dtapps/gostring
+# github.com/saracen/go7z v0.0.0-20191010121135-9c09b6bd7fda
+## explicit
+github.com/saracen/go7z
+github.com/saracen/go7z/filters
+github.com/saracen/go7z/headers
+# github.com/saracen/go7z-fixtures v0.0.0-20190623165746-aa6b8fba1d2f
+## explicit
+# github.com/saracen/solidblock v0.0.0-20190426153529-45df20abab6f
+## explicit
+github.com/saracen/solidblock
+# github.com/ulikunitz/xz v0.5.10
+## explicit; go 1.12
+github.com/ulikunitz/xz/internal/hash
+github.com/ulikunitz/xz/internal/xlog
+github.com/ulikunitz/xz/lzma
+# golang.org/x/text v0.3.7
+## explicit; go 1.17
+golang.org/x/text/encoding
+golang.org/x/text/encoding/internal
+golang.org/x/text/encoding/internal/identifier
+golang.org/x/text/encoding/simplifiedchinese
+golang.org/x/text/transform
