@@ -4,5 +4,6 @@
 .idea
 .vscode
 *.log
-gitmod.sh
 *_test.go
+gomod.sh
+/vendor/

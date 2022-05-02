@@ -1,9 +1,9 @@
-github.com/dtapps/gorequest v1.0.1 h1:m2mcRm0GaKZYvLqS1pT52MzKlyeZ2unrF9FUffcYWk4=
-github.com/dtapps/gorequest v1.0.1/go.mod h1:/MXGRHvBQoUaYZwozsfVSbMOHC79XcrptjOHYdMv4lk=
-github.com/dtapps/gostring v1.0.0 h1:UQyCCfpz+395yTzuKAa0SrmQ3ky/rCv1FkX9t6GyOx4=
-github.com/dtapps/gostring v1.0.0/go.mod h1:BYYnZHrmwpFXkLpd9rQyV5YcChovVreacfcjyMKEwoU=
-github.com/nilorg/sdk v0.0.0-20210429091026-95b6cdc95c84 h1:Nxk1uViXfb9MHgtHBlQFWzlQCsJbDQuotfTsAFcFP3o=
-github.com/nilorg/sdk v0.0.0-20210429091026-95b6cdc95c84/go.mod h1:X1swpPdqguAZaBDoEPyEWHSsJii0YQ1o+3piMv6W3JU=
+github.com/dtapps/gorequest v1.0.12 h1:NCEB0M5p8xWei01GULnlagE2XhpTe0oH8SDEEswUs+4=
+github.com/dtapps/gorequest v1.0.12/go.mod h1:0JyD79CSOtTVRF4Rkw8xHvFMjQw9aseqsB/wfRnwUSc=
+github.com/dtapps/gostring v1.0.1 h1:J04kndQ08LOqb+H41s8PbMEgNtpheV9iTTl7DSPIZVk=
+github.com/dtapps/gostring v1.0.1/go.mod h1:BYYnZHrmwpFXkLpd9rQyV5YcChovVreacfcjyMKEwoU=
+github.com/dtapps/gotime v1.0.1 h1:rO44sQ8tFKUxXrxP7clAOTNS/bwhr/QB9+VwFHPsNH8=
+github.com/dtapps/gotime v1.0.1/go.mod h1:lbp8pG/8aV3O+t7IuAjasL2WLBsZqLZG6Uw6KqSnox8=
 github.com/saracen/go7z v0.0.0-20191010121135-9c09b6bd7fda h1:h+YpzUB/bGVJcLqW+d5GghcCmE/A25KbzjXvWJQi/+o=
 github.com/saracen/go7z v0.0.0-20191010121135-9c09b6bd7fda/go.mod h1:MSotTrCv1PwoR8QgU1JurEx+lNNbtr25I+m0zbLyAGw=
 github.com/saracen/go7z-fixtures v0.0.0-20190623165746-aa6b8fba1d2f h1:PF9WV5j/x6MT+x/sauUHd4objCvJbZb0wdxZkHSdd5A=

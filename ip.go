@@ -56,7 +56,7 @@ var respGetOutsideIp struct {
 func GetOutsideIp() (ip string) {
 	ip = "0.0.0.0"
 	get := gorequest.NewHttp()
-	get.SetUrl("https://api.dtapp.net/ip")
+	get.SetUri("https://api.dtapp.net/ip")
 	response, err := get.Get()
 	if err != nil {
 		return
