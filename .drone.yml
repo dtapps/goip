@@ -1,0 +1,10 @@
+workspace:
+  base: /go
+  path: src/golang/library
+pipeline:
+  test:
+    image: golang:1.18
+    commands:
+      - go env -w GO111MODULE=on
+      - go env -w GOPROXY=https://goproxy.cn,direct
+      - go test -v ./...
