@@ -1,8 +1,9 @@
-workspace:
-  base: /go
-  path: src/golang/library
-pipeline:
-  test:
+kind: pipeline
+type: docker
+name: clone
+
+steps:
+  - name: test-golang
     image: golang:1.18
     commands:
       - go env -w GO111MODULE=on
