@@ -1,9 +1,9 @@
-module github.com/dtapps/goip
+module go.dtapp.net/ip
 
 go 1.18
 
 require (
-	github.com/dtapps/gorequest v1.0.13
+	github.com/dtapps/gorequest v1.0.16
 	github.com/dtapps/gostring v1.0.1
 	github.com/saracen/go7z v0.0.0-20191010121135-9c09b6bd7fda
 	golang.org/x/text v0.3.7
