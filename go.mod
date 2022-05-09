@@ -10,7 +10,6 @@ require (
 )
 
 require (
-	github.com/dtapps/gotime v1.0.1 // indirect
 	github.com/saracen/go7z-fixtures v0.0.0-20190623165746-aa6b8fba1d2f // indirect
 	github.com/saracen/solidblock v0.0.0-20190426153529-45df20abab6f // indirect
 	github.com/ulikunitz/xz v0.5.10 // indirect
