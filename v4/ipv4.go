@@ -4,7 +4,7 @@ import (
 	_ "embed"
 	"encoding/binary"
 	"errors"
-	"github.com/dtapps/gostring"
+	"go.dtapp.net/gostring"
 	"golang.org/x/text/encoding/simplifiedchinese"
 	"io/ioutil"
 	"log"

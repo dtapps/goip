@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-const Version = "1.0.10"
+const Version = "1.0.11"
 
 type App struct {
 	V4Region ip2region.Ip2Region // IPV4

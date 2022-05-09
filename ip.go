@@ -2,7 +2,7 @@ package goip
 
 import (
 	"encoding/json"
-	"github.com/dtapps/gorequest"
+	"go.dtapp.net/gorequest"
 	"net"
 )
 
