@@ -1,14 +1,14 @@
 package goip
 
 import (
-	"go.dtapp.net/ip/ip2region"
-	v4 "go.dtapp.net/ip/v4"
-	v6 "go.dtapp.net/ip/v6"
+	"go.dtapp.net/goip/ip2region"
+	v4 "go.dtapp.net/goip/v4"
+	v6 "go.dtapp.net/goip/v6"
 	"log"
 	"strings"
 )
 
-const Version = "1.0.9"
+const Version = "1.0.10"
 
 type App struct {
 	V4Region ip2region.Ip2Region // IPV4
