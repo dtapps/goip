@@ -4,6 +4,8 @@ import (
 	_ "embed"
 	"errors"
 	"go.dtapp.net/gostring"
+	"io/ioutil"
+	"log"
 	"os"
 	"strconv"
 	"strings"
@@ -159,4 +161,17 @@ func ip2long(IpStr string) (int64, error) {
 	}
 
 	return sum, nil
+}
+
+func (r *Ip2Region) OnlineDownload() (err error) {
+	tmpData, err := getOnline()
+	if err != nil {
+		return errors.New("下载失败 %s" + err.Error())
+	}
+	if err := ioutil.WriteFile("./ip2region.db", tmpData, 0644); err == nil {
+		log.Printf("已下载最新 ip2region 数据库 %s ", "./ip2region.db")
+	} else {
+		return errors.New("保存失败")
+	}
+	return nil
 }

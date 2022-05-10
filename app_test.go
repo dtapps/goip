@@ -8,8 +8,9 @@ import (
 var app App
 
 func TestOnlineDownload(t *testing.T) {
-	//t.Log(app.V4db.OnlineDownload()) // 在线下载ipv4数据库
-	//t.Log(app.V6db.OnlineDownload()) // 在线下载ipv6数据库
+	//t.Log(app.V4db.OnlineDownload())     // 在线下载ipv4数据库
+	//t.Log(app.V6db.OnlineDownload())     // 在线下载ipv6数据库
+	//t.Log(app.V4Region.OnlineDownload()) // 在线下载ip2region数据库
 }
 
 func TestIp(t *testing.T) {
