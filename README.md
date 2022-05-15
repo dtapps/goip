@@ -23,3 +23,22 @@ import (
     "go.dtapp.net/goip"
 )
 ```
+
+```go
+package main
+
+import (
+	"go.dtapp.net/goip"
+	"testing"
+)
+
+func TestGoIp(t *testing.T) {
+	// 获取Mac地址
+	t.Log(goip.GetMacAddr())
+	// 内网ip
+	t.Log(goip.GetInsideIp())
+	// 外网ip
+	t.Log(goip.GetOutsideIp())
+}
+
+```

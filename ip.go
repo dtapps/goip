@@ -71,3 +71,20 @@ func GetOutsideIp() (ip string) {
 	ip = respGetOutsideIp.Data.Ip
 	return respGetOutsideIp.Data.Ip
 }
+
+// GetMacAddr 获取Mac地址
+func GetMacAddr() (arrays []string) {
+	netInterfaces, err := net.Interfaces()
+	if err != nil {
+		return arrays
+	}
+	for _, netInterface := range netInterfaces {
+		addr := netInterface.HardwareAddr.String()
+		if len(addr) == 0 {
+			continue
+		}
+
+		arrays = append(arrays, addr)
+	}
+	return arrays
+}

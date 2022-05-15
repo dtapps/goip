@@ -13,3 +13,7 @@ func TestGetInsideIp(t *testing.T) {
 func TestIps(t *testing.T) {
 	t.Log(Ips())
 }
+
+func TestGetMacAddr(t *testing.T) {
+	t.Log(GetMacAddr())
+}
