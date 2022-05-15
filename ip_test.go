@@ -2,18 +2,9 @@ package goip
 
 import "testing"
 
-func TestGetOutsideIp(t *testing.T) {
-	t.Log(GetOutsideIp())
-}
-
-func TestGetInsideIp(t *testing.T) {
-	t.Log(GetInsideIp())
-}
-
-func TestIps(t *testing.T) {
+func TestIpIp(t *testing.T) {
+	t.Log("GetOutsideIp", GetOutsideIp())
+	t.Log("GetInsideIp", GetInsideIp())
 	t.Log(Ips())
-}
-
-func TestGetMacAddr(t *testing.T) {
-	t.Log(GetMacAddr())
+	t.Log("GetMacAddr", GetMacAddr())
 }
