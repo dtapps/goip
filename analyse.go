@@ -18,12 +18,12 @@ type AnalyseResult struct {
 	Isp      string `json:"isp,omitempty"`      // 运营商
 }
 
-func (app *App) Analyse(item string) AnalyseResult {
-	isIp := app.isIpv4OrIpv6(item)
+func (c *Client) Analyse(item string) AnalyseResult {
+	isIp := c.isIpv4OrIpv6(item)
 	switch isIp {
 	case ipv4:
-		info := app.V4db.Find(item)
-		search, err := app.V4Region.MemorySearch(item)
+		info := c.V4db.Find(item)
+		search, err := c.V4Region.MemorySearch(item)
 		if err != nil {
 			return AnalyseResult{
 				IP:      info.IP,
@@ -40,7 +40,7 @@ func (app *App) Analyse(item string) AnalyseResult {
 			}
 		}
 	case ipv6:
-		info := app.V6db.Find(item)
+		info := c.V6db.Find(item)
 		return AnalyseResult{
 			IP:       info.IP,
 			Country:  info.Country,
@@ -55,7 +55,7 @@ func (app *App) Analyse(item string) AnalyseResult {
 }
 
 // CheckIpv4 检查数据是不是IPV4
-func (app *App) CheckIpv4(ips string) bool {
+func (c *Client) CheckIpv4(ips string) bool {
 	if len(ips) > 3 {
 		return false
 	}
@@ -73,7 +73,7 @@ func (app *App) CheckIpv4(ips string) bool {
 }
 
 // CheckIpv6 检测是不是IPV6
-func (app *App) CheckIpv6(ips string) bool {
+func (c *Client) CheckIpv6(ips string) bool {
 	if ips == "" {
 		return true
 	}
