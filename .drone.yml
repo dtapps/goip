@@ -3,7 +3,7 @@ type: docker
 name: clone
 
 steps:
-  - name: test-golang
+  - name: test_golang
     image: golang:1.18
     commands:
       - go env -w GO111MODULE=on
