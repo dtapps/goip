@@ -13,5 +13,5 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: 1.18
-      - name: test_golang
+      - name: Test
         run: go test -v ./...

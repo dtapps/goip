@@ -14,7 +14,7 @@ stages:
     trigger: auto
     steps:
       - step: build@golang
-        name: test_golang
+        name: Test
         displayName: Golang 测试
         golangVersion: '1.8'
         commands:
