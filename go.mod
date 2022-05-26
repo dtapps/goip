@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/saracen/go7z v0.0.0-20191010121135-9c09b6bd7fda
-	go.dtapp.net/gorequest v1.0.18
+	go.dtapp.net/gorequest v1.0.19
 	go.dtapp.net/gostring v1.0.3
 	golang.org/x/text v0.3.7
 )
