@@ -9,3 +9,9 @@ steps:
       - go env -w GO111MODULE=on
       - go env -w GOPROXY=https://goproxy.cn,direct
       - go test -v ./...
+  - name: Benchmark
+    image: golang:1.18
+    commands:
+      - go env -w GO111MODULE=on
+      - go env -w GOPROXY=https://goproxy.cn,direct
+      - go test -bench=. -benchmem
