@@ -6,8 +6,8 @@ github.com/saracen/solidblock v0.0.0-20190426153529-45df20abab6f h1:1cJITU3JUI8q
 github.com/saracen/solidblock v0.0.0-20190426153529-45df20abab6f/go.mod h1:LyBTue+RWeyIfN3ZJ4wVxvDuvlGJtDgCLgCb6HCPgps=
 github.com/ulikunitz/xz v0.5.10 h1:t92gobL9l3HE202wg3rlk19F6X+JOxl9BBrCCMYEYd8=
 github.com/ulikunitz/xz v0.5.10/go.mod h1:nbz6k7qbPmH4IRqmfOplQw/tblSgqTqBwxkY0oWt/14=
-go.dtapp.net/gorequest v1.0.19 h1:ZBkXb/oD59aChfzHfReK6M3M4eu3dwpaPTefe1c8P90=
-go.dtapp.net/gorequest v1.0.19/go.mod h1:EwOfdfxsWPszOWrphCWHTN4DbYtU6fyQ/fuWQyQwSnk=
+go.dtapp.net/gorequest v1.0.20 h1:rddlXqcabDQNUb+iBvJthpNyD0Bv1yLbYftK+CSwSMA=
+go.dtapp.net/gorequest v1.0.20/go.mod h1:EwOfdfxsWPszOWrphCWHTN4DbYtU6fyQ/fuWQyQwSnk=
 go.dtapp.net/gostring v1.0.3 h1:KSOq4D77/g5yZN/bqWfZ0kOOaPr/P1240vg03+XdENI=
 go.dtapp.net/gostring v1.0.3/go.mod h1:+ggrOvgQDQturi1QGsXEpyRN/ZPoRDaqhMujIk5lrgQ=
 go.dtapp.net/gotime v1.0.2 h1:CFIJHQXC/4t9bsJhk2cLhjHd6rpdPcJXr8BcHKHDuQo=
