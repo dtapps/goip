@@ -1,4 +1,4 @@
-module go.dtapp.net/goip
+module github.com/dtapps/goip
 
 go 1.18
 

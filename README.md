@@ -2,33 +2,27 @@
 <a href="https://www.dtapp.net/">Golang Ip</a>
 </h1>
 
-📦 Golang Ip库组件
+📦 Golang Ip库
 
 [comment]: <> (go)
-[![godoc](https://pkg.go.dev/badge/go.dtapp.net/goip?status.svg)](https://pkg.go.dev/go.dtapp.net/goip)
-[![goproxy.cn](https://goproxy.cn/stats/go.dtapp.net/goip/badges/download-count.svg)](https://goproxy.cn/stats/go.dtapp.net/goip)
-[![goreportcard.com](https://goreportcard.com/badge/go.dtapp.net/goip	)](https://goreportcard.com/report/go.dtapp.net/goip)
-[![deps.dev](https://img.shields.io/badge/deps-go-red.svg)](https://deps.dev/go/go.dtapp.net/goip)
+[![godoc](https://pkg.go.dev/badge/github.com/dtapps/goip?status.svg)](https://pkg.go.dev/github.com/dtapps/goip)
+[![goproxy.cn](https://goproxy.cn/stats/github.com/dtapps/goip/badges/download-count.svg)](https://goproxy.cn/stats/github.com/dtapps/goip)
+[![goreportcard.com](https://goreportcard.com/badge/github.com/dtapps/goip	)](https://goreportcard.com/report/github.com/dtapps/goip)
+[![deps.dev](https://img.shields.io/badge/deps-go-red.svg)](https://deps.dev/go/github.com%2Fdtapps%2Fgoip)
 
-#### 安装使用
-
-```go
-go get -v -u go.dtapp.net/goip
-```
-
-#### 导入
+#### 安装
 
 ```go
-import (
-    "go.dtapp.net/goip"
-)
+go get -v -u github.com/dtapps/goip
 ```
+
+#### 使用
 
 ```go
 package main
 
 import (
-	"go.dtapp.net/goip"
+	"github.com/dtapps/goip"
 	"testing"
 )
 
