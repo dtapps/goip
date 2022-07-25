@@ -4,7 +4,7 @@ import (
 	_ "embed"
 	"encoding/binary"
 	"errors"
-	"go.dtapp.net/gostring"
+	"github.com/dtapps/gostring"
 	"io/ioutil"
 	"log"
 	"math/big"
