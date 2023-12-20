@@ -1,13 +1,15 @@
 package goip
 
 import (
-	"encoding/json"
-	"github.com/dtapps/gorequest"
+	"context"
+	"go.dtapp.net/gojson"
+	"go.dtapp.net/gorequest"
 	"net"
 )
 
 // GetInsideIp 内网ip
-func GetInsideIp() string {
+func GetInsideIp(ctx context.Context) string {
+
 	conn, err := net.Dial("udp", "8.8.8.8:80")
 	if err != nil {
 		panic(err)
@@ -19,7 +21,7 @@ func GetInsideIp() string {
 }
 
 // Ips 获取全部网卡的全部IP
-func Ips() (map[string]string, error) {
+func Ips(ctx context.Context) (map[string]string, error) {
 
 	ips := make(map[string]string)
 
@@ -46,34 +48,38 @@ func Ips() (map[string]string, error) {
 	return ips, nil
 }
 
-var respGetOutsideIp struct {
-	Data struct {
-		Ip string `json:"ip"`
-	} `json:"data"`
-}
-
 // GetOutsideIp 外网ip
-func GetOutsideIp() (ip string) {
-	ip = "0.0.0.0"
-	get := gorequest.NewHttp()
-	get.SetUri("https://api.dtapp.net/ip")
-	response, err := get.Get()
+func GetOutsideIp(ctx context.Context) string {
+
+	// 返回结果
+	type respGetOutsideIp struct {
+		Data struct {
+			Ip string `json:"ip,omitempty"`
+		} `json:"data"`
+	}
+
+	// 请求
+	getHttp := gorequest.NewHttp()
+	getHttp.SetUri("https://api.dtapp.net/ip")
+	getHttp.SetUserAgent(gorequest.GetRandomUserAgentSystem())
+	response, err := getHttp.Get(ctx)
 	if err != nil {
-		return
+		return "0.0.0.0"
 	}
-	err = json.Unmarshal(response.ResponseBody, &respGetOutsideIp)
+	// 解析
+	var responseJson respGetOutsideIp
+	err = gojson.Unmarshal(response.ResponseBody, &responseJson)
 	if err != nil {
-		return
+		return "0.0.0.0"
 	}
-	if respGetOutsideIp.Data.Ip == "" {
-		return
+	if responseJson.Data.Ip == "" {
+		responseJson.Data.Ip = "0.0.0.0"
 	}
-	ip = respGetOutsideIp.Data.Ip
-	return respGetOutsideIp.Data.Ip
+	return responseJson.Data.Ip
 }
 
 // GetMacAddr 获取Mac地址
-func GetMacAddr() (arrays []string) {
+func GetMacAddr(ctx context.Context) (arrays []string) {
 	netInterfaces, err := net.Interfaces()
 	if err != nil {
 		return arrays
