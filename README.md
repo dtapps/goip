@@ -13,7 +13,7 @@
 #### 安装
 
 ```go
-go get -v -u go.dtapp.net/goip
+go get -v -u go.dtapp.net/goip@v1.0.42
 ```
 
 #### 使用

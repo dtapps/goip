@@ -1,11 +1,10 @@
-module github.com/dtapps/goip
+module go.dtapp.net/goip
 
 go 1.18
 
 require (
 	github.com/oschwald/geoip2-golang v1.9.0
 	github.com/saracen/go7z v0.0.0-20191010121135-9c09b6bd7fda
-	go.dtapp.net/goip v1.0.40
 	go.dtapp.net/gojson v1.0.2
 	go.dtapp.net/gorequest v1.0.39
 	go.dtapp.net/gostring v1.0.11
@@ -31,15 +30,16 @@ require (
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
-	github.com/oschwald/maxminddb-golang v1.11.0 // indirect
+	github.com/oschwald/maxminddb-golang v1.12.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.1.1 // indirect
+	github.com/saracen/go7z-fixtures v0.0.0-20190623165746-aa6b8fba1d2f // indirect
 	github.com/saracen/solidblock v0.0.0-20190426153529-45df20abab6f // indirect
 	github.com/shirou/gopsutil v3.21.11+incompatible // indirect
 	github.com/tklauser/go-sysconf v0.3.13 // indirect
 	github.com/tklauser/numcpus v0.7.0 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
-	github.com/ulikunitz/xz v0.5.10 // indirect
+	github.com/ulikunitz/xz v0.5.11 // indirect
 	github.com/yusufpapurcu/wmi v1.2.3 // indirect
 	go.dtapp.net/gorandom v1.0.2 // indirect
 	go.dtapp.net/gotime v1.0.6 // indirect
