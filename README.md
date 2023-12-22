@@ -12,8 +12,8 @@
 
 #### 安装
 
-```go
-go get -v -u go.dtapp.net/goip@v1.0.42
+```shell
+go get -v -u go.dtapp.net/goip@v1.0.43
 ```
 
 #### 使用

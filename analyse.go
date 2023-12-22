@@ -1,7 +1,6 @@
 package goip
 
 import (
-	"net"
 	"strconv"
 )
 
@@ -17,40 +16,17 @@ type AnalyseResult struct {
 	LocationLongitude float64 `json:"location_longitude"` // 位置经度
 }
 
-func (c *Client) Analyse(item string) AnalyseResult {
-	isIp := c.isIpv4OrIpv6(item)
-	ipByte := net.ParseIP(item)
-	switch isIp {
-	case ipv4:
-		ip2regionV2Info, _ := c.QueryIp2RegionV2(ipByte)
-		geoIpInfo, _ := c.QueryGeoIp(ipByte)
-		return AnalyseResult{
-			Ip:                ipByte.String(),
-			Continent:         geoIpInfo.Continent.Name,
-			Country:           geoIpInfo.Country.Name,
-			Province:          ip2regionV2Info.Province,
-			City:              ip2regionV2Info.City,
-			Isp:               ip2regionV2Info.Operator,
-			LocationTimeZone:  geoIpInfo.Location.TimeZone,
-			LocationLatitude:  geoIpInfo.Location.Latitude,
-			LocationLongitude: geoIpInfo.Location.Longitude,
-		}
-	case ipv6:
-		geoIpInfo, _ := c.QueryGeoIp(ipByte)
-		ipv6Info, _ := c.QueryIpv6wry(ipByte)
-		return AnalyseResult{
-			Ip:                ipByte.String(),
-			Continent:         geoIpInfo.Continent.Name,
-			Country:           geoIpInfo.Country.Name,
-			Province:          ipv6Info.Province,
-			City:              ipv6Info.City,
-			Isp:               ipv6Info.Isp,
-			LocationTimeZone:  geoIpInfo.Location.TimeZone,
-			LocationLatitude:  geoIpInfo.Location.Latitude,
-			LocationLongitude: geoIpInfo.Location.Longitude,
-		}
-	default:
-		return AnalyseResult{}
+func (c *Client) Analyse(ip string) AnalyseResult {
+	geoIpInfo, _ := c.QueryGeoIp(ip)
+	return AnalyseResult{
+		Ip:                ip,
+		Continent:         geoIpInfo.Continent.Name,
+		Country:           geoIpInfo.Country.Name,
+		Province:          geoIpInfo.Province.Name,
+		City:              geoIpInfo.City.Name,
+		LocationTimeZone:  geoIpInfo.Location.TimeZone,
+		LocationLatitude:  geoIpInfo.Location.Latitude,
+		LocationLongitude: geoIpInfo.Location.Longitude,
 	}
 }
 

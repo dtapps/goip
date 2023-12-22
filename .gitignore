@@ -6,4 +6,4 @@
 *.log
 gomod.sh
 /vendor/
-download_test.go
+*_test.go
