@@ -1,8 +1,8 @@
 <h1>
-<a href="https://www.dtapp.net/">Golang Ip</a>
+<a href="https://www.dtapp.net/">Golang</a>
 </h1>
 
-📦 Golang Ip
+📦 Golang IP数据库
 
 [comment]: <> (go)
 [![godoc](https://pkg.go.dev/badge/go.dtapp.net/goip?status.svg)](https://pkg.go.dev/go.dtapp.net/goip)
