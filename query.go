@@ -1,8 +1,29 @@
 package goip
 
 import (
+	"errors"
 	"go.dtapp.net/goip/geoip"
+	"go.dtapp.net/goip/qqwry"
+	"net"
 )
+
+var (
+	QueryIncorrect = errors.New("ip地址不正确")
+)
+
+// QueryQqWry 纯真IP库
+// https://www.cz88.net/
+func (c *Client) QueryQqWry(ipAddress string) (result qqwry.QueryResult, err error) {
+	ip := net.ParseIP(ipAddress)
+	if ip.To4() == nil {
+		return result, QueryIncorrect
+	}
+	query, err := c.qqwryClient.Query(ipAddress)
+	if err != nil {
+		return qqwry.QueryResult{}, err
+	}
+	return query, err
+}
 
 // QueryGeoIp ip2region
 // https://www.maxmind.com/

@@ -4,8 +4,9 @@ go 1.21.5
 
 require (
 	github.com/oschwald/geoip2-golang v1.9.0
-	go.dtapp.net/gorequest v1.0.40
-	go.dtapp.net/gostring v1.0.12
+	go.dtapp.net/gorequest v1.0.41
+	go.dtapp.net/gostring v1.0.13
+	golang.org/x/text v0.14.0
 )
 
 require (
@@ -38,12 +39,11 @@ require (
 	go.dtapp.net/gojson v1.0.2 // indirect
 	go.dtapp.net/gorandom v1.0.2 // indirect
 	go.dtapp.net/gotime v1.0.6 // indirect
-	go.dtapp.net/gotrace_id v1.0.6 // indirect
+	go.dtapp.net/gotrace_id v1.0.8 // indirect
 	golang.org/x/arch v0.6.0 // indirect
 	golang.org/x/crypto v0.17.0 // indirect
 	golang.org/x/net v0.19.0 // indirect
 	golang.org/x/sys v0.15.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
-	google.golang.org/protobuf v1.31.0 // indirect
+	google.golang.org/protobuf v1.32.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

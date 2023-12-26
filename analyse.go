@@ -1,6 +1,7 @@
 package goip
 
 import (
+	"log"
 	"strconv"
 )
 
@@ -18,12 +19,16 @@ type AnalyseResult struct {
 
 func (c *Client) Analyse(ip string) AnalyseResult {
 	geoIpInfo, _ := c.QueryGeoIp(ip)
+	log.Println(geoIpInfo)
+	qqeryIpInfo, _ := c.QueryQqWry(ip)
+	log.Println(qqeryIpInfo)
 	return AnalyseResult{
 		Ip:                ip,
 		Continent:         geoIpInfo.Continent.Name,
 		Country:           geoIpInfo.Country.Name,
 		Province:          geoIpInfo.Province.Name,
 		City:              geoIpInfo.City.Name,
+		Isp:               qqeryIpInfo.Area,
 		LocationTimeZone:  geoIpInfo.Location.TimeZone,
 		LocationLatitude:  geoIpInfo.Location.Latitude,
 		LocationLongitude: geoIpInfo.Location.Longitude,

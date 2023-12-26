@@ -5,19 +5,28 @@ import (
 )
 
 type Client struct {
-	asnDb     *geoip2.Reader
-	cityDb    *geoip2.Reader
-	countryDb *geoip2.Reader
+	asnFilepath     string
+	asnDb           *geoip2.Reader
+	cityFilepath    string
+	cityDb          *geoip2.Reader
+	countryFilepath string
+	countryDb       *geoip2.Reader
 }
 
 func New(asnFilepath string, cityFilepath string, countryFilepath string) (*Client, error) {
 
 	var err error
-	c := &Client{}
+	c := &Client{
+		asnFilepath:     asnFilepath,
+		cityFilepath:    cityFilepath,
+		countryFilepath: countryFilepath,
+	}
 
-	c.asnDb, err = geoip2.Open(asnFilepath)
-	if err != nil {
-		return nil, err
+	if asnFilepath != "" {
+		c.asnDb, err = geoip2.Open(asnFilepath)
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	c.cityDb, err = geoip2.Open(cityFilepath)
@@ -25,16 +34,22 @@ func New(asnFilepath string, cityFilepath string, countryFilepath string) (*Clie
 		return nil, err
 	}
 
-	c.countryDb, err = geoip2.Open(countryFilepath)
-	if err != nil {
-		return nil, err
+	if countryFilepath != "" {
+		c.countryDb, err = geoip2.Open(countryFilepath)
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	return c, err
 }
 
 func (c *Client) Close() {
-	c.asnDb.Close()
+	if c.asnFilepath != "" {
+		c.asnDb.Close()
+	}
 	c.cityDb.Close()
-	c.countryDb.Close()
+	if c.countryFilepath != "" {
+		c.countryDb.Close()
+	}
 }

@@ -4,6 +4,8 @@
 .idea
 .vscode
 *.log
-gomod.sh
+*.mmdb
+*.dat
+mod.sh
 /vendor/
 *_test.go
