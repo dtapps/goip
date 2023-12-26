@@ -1,3 +1,3 @@
 package goip
 
-const Version = "1.0.44"
+const Version = "1.0.45"

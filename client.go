@@ -16,13 +16,14 @@ type ClientConfig struct {
 type Client struct {
 	geoIpClient *geoip.Client
 	qqwryClient *qqwry.Client
+	config      *ClientConfig
 }
 
 // NewIp 实例化
 func NewIp(config *ClientConfig) (*Client, error) {
 
 	var err error
-	c := &Client{}
+	c := &Client{config: config}
 
 	if config.GeoipCityPath == "" {
 		return nil, errors.New("请配置 GeoipCityPath 文件")
@@ -31,6 +32,7 @@ func NewIp(config *ClientConfig) (*Client, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	if config.QqwryPath != "" {
 		c.qqwryClient, err = qqwry.New(config.QqwryPath)
 		if err != nil {
@@ -43,8 +45,4 @@ func NewIp(config *ClientConfig) (*Client, error) {
 
 func (c *Client) Close() {
 	c.geoIpClient.Close()
-}
-
-func (c *Client) GetGeo() *geoip.Client {
-	return c.geoIpClient
 }

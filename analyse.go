@@ -1,7 +1,6 @@
 package goip
 
 import (
-	"log"
 	"strconv"
 )
 
@@ -17,22 +16,30 @@ type AnalyseResult struct {
 	LocationLongitude float64 `json:"location_longitude"` // 位置经度
 }
 
-func (c *Client) Analyse(ip string) AnalyseResult {
-	geoIpInfo, _ := c.QueryGeoIp(ip)
-	log.Println(geoIpInfo)
-	qqeryIpInfo, _ := c.QueryQqWry(ip)
-	log.Println(qqeryIpInfo)
-	return AnalyseResult{
-		Ip:                ip,
-		Continent:         geoIpInfo.Continent.Name,
-		Country:           geoIpInfo.Country.Name,
-		Province:          geoIpInfo.Province.Name,
-		City:              geoIpInfo.City.Name,
-		Isp:               qqeryIpInfo.Area,
-		LocationTimeZone:  geoIpInfo.Location.TimeZone,
-		LocationLatitude:  geoIpInfo.Location.Latitude,
-		LocationLongitude: geoIpInfo.Location.Longitude,
+func (c *Client) Analyse(ip string) (resp AnalyseResult) {
+	resp.Ip = ip
+
+	if c.config.GeoipCityPath != "" {
+		geoIpInfo, err := c.QueryGeoIp(ip)
+		if err == nil {
+			resp.Continent = geoIpInfo.Continent.Name
+			resp.Country = geoIpInfo.Country.Name
+			resp.Province = geoIpInfo.Province.Name
+			resp.City = geoIpInfo.City.Name
+			resp.LocationTimeZone = geoIpInfo.Location.TimeZone
+			resp.LocationLatitude = geoIpInfo.Location.Latitude
+			resp.LocationLongitude = geoIpInfo.Location.Longitude
+		}
 	}
+
+	if c.config.GeoipCityPath != "" {
+		qqwryIpInfo, err := c.QueryQqWry(ip)
+		if err == nil {
+			resp.Isp = qqwryIpInfo.Area
+		}
+	}
+
+	return resp
 }
 
 // CheckIpv4 检查数据是不是IPV4
