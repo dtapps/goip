@@ -6,6 +6,7 @@
 *.log
 *.mmdb
 *.dat
-mod.sh
+go_mod.sh
 /vendor/
 *_test.go
+iploc.zip
